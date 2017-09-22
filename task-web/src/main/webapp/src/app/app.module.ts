@@ -10,7 +10,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaskService} from './tasks/task.service';
-
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
     declarations: [
@@ -23,7 +23,8 @@ import { TaskService} from './tasks/task.service';
         BrowserModule,
         FormsModule,
         AppRoutingModule,
-        HttpModule
+        HttpModule,
+        MaterializeModule
     ],
     providers: [TaskService],
     bootstrap: [AppComponent]
