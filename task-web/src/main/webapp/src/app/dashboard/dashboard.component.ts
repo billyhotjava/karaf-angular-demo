@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Task} from '../tasks/task';
 import {TaskService} from '../tasks/task.service';
 
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+    styleUrls: ['./dashboard.component.css'],
+    providers: [TaskService]
 })
 export class DashboardComponent implements OnInit {
-    tasks: Task[] = [];
+    tasks: Task[];
 
     constructor(private taskService: TaskService) { }
 
     ngOnInit(): void {
-        this.taskService.getTasks()
-            .then(tasks => this.tasks = tasks.slice(1, 5));
+        console.log("start to do get=====")
+        this.taskService.getTasks().subscribe(
+            (tasks) => {
+                this.tasks = tasks;
+                console.log("get all tasks:" + tasks)
+            }
+        );
     }
 
 }

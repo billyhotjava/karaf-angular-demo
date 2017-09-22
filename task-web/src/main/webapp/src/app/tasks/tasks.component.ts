@@ -7,7 +7,8 @@ import { TaskService } from './task.service';
 @Component({
     selector: 'app-tasks',
     templateUrl: './tasks.component.html',
-    styleUrls: ['./tasks.component.css']
+    styleUrls: ['./tasks.component.css'],
+    providers: [TaskService]
 })
 export class TasksComponent implements OnInit {
     tasks: Task[];
@@ -19,7 +20,12 @@ export class TasksComponent implements OnInit {
     ) { }
 
     getTasks(){
-        this.taskService.getTasks().then(tasks => this.tasks = tasks);
+        console.log("start to do get all tasks from task component=====")
+        this.taskService.getTasks().subscribe(
+            (tasks) => {
+                this.tasks = tasks;
+            }
+        );
     }
 
     ngOnInit() {
