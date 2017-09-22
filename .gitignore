@@ -41,3 +41,6 @@ Thumbs.db
 /task-app/task-service/target/
 
 /task-web/target/
+/task-demo.ipr
+/task-demo.iws
+/task-demo.iml
