@@ -39,7 +39,5 @@ Thumbs.db
 /task-web/src/main/webapp/e2e/
 /task-app/task-persistence/target/
 /task-app/task-service/target/
-/task-app/task-service/task.iml
-/task-app/task.bundle.iml
-/task-app/task-persistence/task.persistence.iml
-/task-web/task.web.iml
+
+/task-web/target/
