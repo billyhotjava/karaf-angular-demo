@@ -60,6 +60,7 @@ export class TaskService {
 
     // api: POST API_URL/tasks/{id}
     updateTask(task: Task): Observable<Task>{
+        console.log("Update task is:" + task);
         return this.http
             .put(API_URL + '/tasks/' + task.id, task)
             .map(response => {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule} from './app-routing/app-routing.module';
@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaskService} from './tasks/task.service';
 import { MaterializeModule } from 'angular2-materialize';
 import { NotFoundComponent } from './share/not-found/not-found.component';
+
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './share/not-found/not-found.component';
         FormsModule,
         AppRoutingModule,
         HttpModule,
-        MaterializeModule
+        MaterializeModule,
+        ReactiveFormsModule
     ],
     providers: [TaskService],
     bootstrap: [AppComponent]

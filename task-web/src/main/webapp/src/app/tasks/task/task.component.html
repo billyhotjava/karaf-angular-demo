@@ -1,19 +1,5 @@
-<!--<div *ngIf="task">
-  <h2>{{task.name}} details!</h2>
-  <div>
-    <label>id: </label>{{task.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="task.name" placeholder="name" /><p></p>
-    <label>status:</label>&nbsp;&nbsp;{{task.status}}
-  </div>
-  <button (click)="goBack()">Back</button>
-</div>
--->
 
-
-
-<h5>{{ title }}</h5>
+<h5>{{title}}</h5>
 <div class="row">
   <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
     <div class="row">
@@ -21,31 +7,26 @@
         <i class="material-icons prefix">account_circle</i>
         <input id="name" type="text" class="validate"
                [(ngModel)]="task.name" formControlName="name"
-               [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid"
-        >
+               [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid" >
         <label for="name"
                [class.active]="task.name"
                data-error="Name is required and needs to contain at least 3 chars">
           Name
         </label>
       </div>
-    </div>
 
-    <div class="row">
       <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <input id="status" type="text" class="validate"
                [(ngModel)]="task.status" formControlName="status"
-               [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid"
-        >
+               [class.invalid]="form.controls['status'].touched && !form.controls['status'].valid" >
         <label for="status"
-               [class.active]="task.status"
-               data-error="status is required and needs to contain at least 3 chars">
-          Name
+                 [class.active]="task.status"
+                 data-error="status is required and needs to contain at least 3 chars">
+            Status
         </label>
       </div>
     </div>
-
     <button class="btn waves-effect waves-light" type="submit"
             [disabled]="!form.valid">
       Submit<i class="material-icons right">send</i>

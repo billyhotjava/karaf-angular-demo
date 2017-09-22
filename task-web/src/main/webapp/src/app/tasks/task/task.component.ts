@@ -6,6 +6,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { Task } from '../task';
 import { TaskService} from '../task.service';
+import { BasicValidators} from "../../share/basic-validators";
 
 @Component({
     selector: 'app-task',
@@ -68,12 +69,15 @@ export class TaskComponent implements OnInit {
         var result,
             taskValue = this.form.value;
 
+        console.log("form value:" + taskValue);
+        taskValue.id = this.task.id;
+        console.log("update id:" + taskValue.id);
         if (taskValue.id){
             result = this.taskService.updateTask(taskValue);
         } else {
             result = this.taskService.addTask(taskValue);
         }
 
-        result.subscribe(data => this.router.navigate(['users']));
+        result.subscribe(data => this.router.navigate(['tasks']));
     }
 }
