@@ -11,13 +11,15 @@ import { TaskComponent } from './tasks/task/task.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaskService} from './tasks/task.service';
 import { MaterializeModule } from 'angular2-materialize';
+import { NotFoundComponent } from './share/not-found/not-found.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         TasksComponent,
         TaskComponent,
-        DashboardComponent
+        DashboardComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,

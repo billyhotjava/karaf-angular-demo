@@ -40,4 +40,19 @@ export class TasksComponent implements OnInit {
         this.router.navigate(['/task', this.selectedTask.id]);
     }
 
+    deleteTask(task){
+        if (confirm("Are you sure you want to delete " + task.name + "?")) {
+            var index = this.tasks.indexOf(task);
+            this.tasks.splice(index, 1);
+
+            this.taskService.deleteTask(task.id)
+                .subscribe(null,
+                    err => {
+                        alert("Could not delete task.");
+                        // Revert the view back to its original state
+                        this.tasks.splice(index, 0, task);
+                    });
+        }
+    }
+
 }
