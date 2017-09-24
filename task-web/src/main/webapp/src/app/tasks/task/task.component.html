@@ -1,5 +1,6 @@
 
 <h5>{{title}}</h5>
+
 <div class="row">
   <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
     <div class="row">
@@ -17,6 +18,7 @@
 
       <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
+
         <input id="status" type="text" class="validate"
                [(ngModel)]="task.status" formControlName="status"
                [class.invalid]="form.controls['status'].touched && !form.controls['status'].valid" >

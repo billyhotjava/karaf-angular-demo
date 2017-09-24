@@ -20,7 +20,6 @@ export class TasksComponent implements OnInit {
     ) { }
 
     getTasks(){
-        console.log("start to do get all tasks from task component=====")
         this.taskService.getTasks().subscribe(
             (tasks) => {
                 this.tasks = tasks;
@@ -36,9 +35,9 @@ export class TasksComponent implements OnInit {
         this.selectedTask = task;
     }
 
-    gotoDetail(): void {
+    /*gotoDetail(): void {
         this.router.navigate(['/task', this.selectedTask.id]);
-    }
+    }*/
 
     deleteTask(task){
         if (confirm("Are you sure you want to delete " + task.name + "?")) {
